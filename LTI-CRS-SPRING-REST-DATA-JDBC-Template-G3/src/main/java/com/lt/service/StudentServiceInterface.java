@@ -13,7 +13,7 @@ public interface StudentServiceInterface {
 
 	public void viewCatalog();
 
-//	public void payFee();
+	public void payFee();
 
 	public void addCourse();
 

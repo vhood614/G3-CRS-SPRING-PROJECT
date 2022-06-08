@@ -18,8 +18,6 @@ import com.lt.constant.JdbcTemplateSQLConstants;
 import com.lt.mapper.CourseMapper;
 import com.lt.mapper.UserMapper;
 
-import net.minidev.json.JSONObject;
-
 /**
  * 
  * UserDao class implementing the UserDaoInterface to get the unimplemented
@@ -35,8 +33,6 @@ public class UserDao implements UserDaoInterface {
 	private static final Logger logger = LoggerFactory.getLogger(AdminDao.class);
 	Scanner sc = new Scanner(System.in);
 	List<User> userDetails = new ArrayList<User>();
-	static public User loggedInUser = null;
-	boolean flag;
 
 	@Autowired
 	JDBCConfiguration jdbcConfiguration;
@@ -101,25 +97,16 @@ public class UserDao implements UserDaoInterface {
 
 	}
 
-	public JSONObject loginUser(User user) {
-		// TODO Auto-generated method stub
-		JSONObject response = new JSONObject();
-		userDetails = loginUsers();
-		flag = false;
-		userDetails.forEach(user1 -> {
-			if (user.getUsername().equals(user1.getUsername()) && user.getPassword().equals(user1.getPassword())) {
-				flag = true;
-				loggedInUser = user1;
-			}
-		});
-		if(flag) {
-			response.put("status", "User Logged in Success");
-		} else {
-			response.put("status", "Wrong Credentials");
-		}
-		return response;
-	}
+//	public void loginUser(User user) {
+//		// TODO Auto-generated method stub
+//		boolean flag = false;
+//		userDetails.forEach(user1 -> {
+//			if (user1.getUsername().equals(user1.getUsername()) && user.getPassword().equals(user1.getPassword())) {
+//				flag = true;
+//				LoggedInuser = user1;
+//			}
+//		});
 
-
+//	}
 
 }

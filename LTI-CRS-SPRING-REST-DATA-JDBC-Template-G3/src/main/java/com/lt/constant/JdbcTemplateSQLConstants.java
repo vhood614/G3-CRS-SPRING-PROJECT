@@ -6,7 +6,7 @@ package com.lt.constant;
 /**
  * @author 91988
  *
- *This class provides all the JDBC queries required to fetch the data
+ *This class proveides all the JDBC queries required to fetch the data
  *from the database.
  */
 public class JdbcTemplateSQLConstants {
@@ -20,5 +20,4 @@ public class JdbcTemplateSQLConstants {
 	public static final String SQL_AddNewProfessor_Query = "insert into professor (profId, profName, profUsername, profPassword) values (?, ?, ?, ?)";
 	public static final String SQL_AddNewCourse_Query = "insert into course (courseName, courseId, courseFees) values (?, ?, ?)";
 	public static final String SQL_ProfessorList_Query = "select * from professor";
-	public static final String SQL_PayFee_Query = "Insert into payment (studentId, courseName, amount, status) values(?, ?, ?, ?)";
 }
