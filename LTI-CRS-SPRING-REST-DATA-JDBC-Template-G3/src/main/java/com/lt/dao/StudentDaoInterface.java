@@ -15,6 +15,6 @@ public interface StudentDaoInterface {
     public List<Course> viewCatalog();
     public void addCourse();
     public void dropCourse();
-	void payFee();
+	String payFee(String courseName, String amount);
     
 }
