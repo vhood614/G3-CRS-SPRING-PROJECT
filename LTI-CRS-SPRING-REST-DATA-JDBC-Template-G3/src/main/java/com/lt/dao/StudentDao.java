@@ -42,6 +42,9 @@ public class StudentDao implements StudentDaoInterface {
 	static Student student = new Student();
 	@Autowired
 	JDBCConfiguration jdbcConfiguration;
+	
+	@Autowired
+	UserDao userDao;
 
 	/**
 	 * 
@@ -185,12 +188,15 @@ public class StudentDao implements StudentDaoInterface {
 	}
 
 	@Override
-	public void payFee() {
-		// TODO Auto-generated method stub
-		System.out.println("Enter the course name to pay fees for : ");
-		String courseName = sc.nextLine();
-		System.out.println("Fees paid successfuly!");
-
+	public String payFee(String courseName, String amount) {
+		if(userDao.loggedInUser == null) {
+			return "user not loggedIn";
+		}
+		jdbcConfiguration.jdbcTemplate().update(JdbcTemplateSQLConstants.SQL_PayFee_Query, userDao.loggedInUser.getId(),
+				courseName, amount, "paid");
+		return "payment added for the course.";
+		
+		
 	}
 
 	/**

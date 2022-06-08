@@ -67,9 +67,10 @@ public class UserController {
 
 	}
 
-//	public ResponseEntity loginUser(@RequestBody User user) {
-//		UserDao.loginUser(user);
-
-//	}
+	@RequestMapping(produces = MediaType.APPLICATION_JSON, method = RequestMethod.GET, value = "/user/login")
+	@ResponseBody
+	public ResponseEntity loginUser(@RequestBody User user) {
+		return new ResponseEntity(userDao.loginUser(user), HttpStatus.OK);
+	}
 
 }
