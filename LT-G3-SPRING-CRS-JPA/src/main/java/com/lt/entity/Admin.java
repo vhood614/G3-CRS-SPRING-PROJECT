@@ -1,4 +1,4 @@
-package com.lt.entity;
+	package com.lt.entity;
 
 public class Admin {
 

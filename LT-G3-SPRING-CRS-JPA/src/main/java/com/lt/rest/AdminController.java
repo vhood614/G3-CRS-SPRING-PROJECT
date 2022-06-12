@@ -42,7 +42,7 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 	
-	@RequestMapping("/")
+	@RequestMapping("/listcourse")
 	public List<Course> getAllCourses() {
 		return adminService.getAllCourses();
 	}

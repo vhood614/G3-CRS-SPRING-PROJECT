@@ -1,0 +1,45 @@
+<p>professor-component works!</p>
+<p>addproduct works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <h2></h2>
+  
+
+  <form #adduserform="ngForm" (ngSubmit)="addProfessor()" >
+    <div class="form-group">
+      <label for="profId">Professor Id</label>
+
+      <input type="text" class="form-control"  required [(ngModel)]="professor.profId" name="profId">
+    </div>
+    <div class="form-group">
+        <label for="profName">Professor Name</label>
+
+
+        <input type="text" class="form-control"  required [(ngModel)]="professor.profName" name="profName">
+      </div>
+
+      <div class="form-group">
+        <label for="profUserName">Professor Username</label>
+
+
+        <input type="text" class="form-control"  required [(ngModel)]="professor.profUserName" name="profUserName">
+      </div>
+    
+      <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp;
+    <!-- <button type="button" class="btn btn-primary" (click)="gotToList()">Back</button> -->
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<p style="text-align: center; font-size: larger;">Admin Menu</p>
+<p></p>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+
+          <div>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Course Id</th>
+                  <th>Course Name</th>
+                  <th>Course Fees</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let course of getData">
+   
+                  <td>{{course.courseId}}</td>
+                  <td>{{course.courseName}}</td>
+                  <td>{{course.courseFees}}</td>
+
+                  <td>
+                    <button type="button" class="btn btn-danger"
+                      (click)="goToDeleteCourse(course.courseId)">Delete</button>
+
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- <li><a href='#' (click)=" getCourseDetails()"><span>List Courses</span></a></li> -->
+
+          <div>
+          ||<a [routerLink]="['']" (click)="getCourseDetails()">List Courses</a>||
+            <a [routerLink]="['/addCourse']">Add Courses</a>||
+            <a [routerLink]="['/addProfessor']">Add Professor</a>||
+
+          </div>
+       
